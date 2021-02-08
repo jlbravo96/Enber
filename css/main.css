@@ -106,7 +106,8 @@ h6 {
   color: #fff; }
 
 body {
-  font-family: "Jost", sans-serif; }
+  font-family: "Jost", sans-serif;
+  overflow-x: hidden; }
 
 .mainGrid {
   display: grid;
@@ -125,12 +126,74 @@ body {
   grid-column: 1 / 2;
   display: flex;
   justify-content: flex-end;
+  position: relative;
   border-bottom: 0.0625rem solid #d9d9d9; }
   @media screen and (min-width: 992px) {
     .pageHeader {
       grid-row: 1 / 2;
       grid-column: 2 / 3;
       border: none; } }
+
+.pageNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 10;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  padding: 3rem 6rem;
+  color: #fff;
+  background-color: #000;
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  transform: translateX(-101%);
+  -webkit-transform: translateX(-101%);
+  -moz-transform: translateX(-101%);
+  -ms-transform: translateX(-101%);
+  -o-transform: translateX(-101%); }
+  @media screen and (min-width: 992px) {
+    .pageNav {
+      position: absolute;
+      padding: 6rem 6rem 3rem;
+      width: 56vw; } }
+  .pageNav__menuList {
+    width: 100%; }
+  .pageNav__menuItem {
+    margin-bottom: 1.25rem; }
+    .pageNav__menuItem--small {
+      margin-bottom: 0.75rem; }
+  .pageNav__menuLink {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    font-family: "Bagnard", sans-serif;
+    font-size: 2rem;
+    line-height: 1; }
+    .pageNav__menuLink--small {
+      font-size: 1rem; }
+  .pageNav__footer {
+    color: #fff;
+    font-weight: 300;
+    align-self: flex-end; }
+
+.menuExpand {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0); }
+
+.separator {
+  width: 3.5rem;
+  height: 0.0625rem;
+  margin: 2rem 0;
+  background-color: gray; }
 
 .mainLogo {
   display: inline-block;
@@ -153,6 +216,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 20;
   cursor: pointer; }
   .menuIcon:hover .menuIcon__icon,
   .menuIcon:hover .menuIcon__cross {
@@ -175,6 +239,9 @@ body {
     -o-transition: transform 0.2s; }
   .menuIcon__cross {
     background-image: url(../assets/icons/cross.svg); }
+
+.fixed {
+  position: fixed; }
 
 .d-none {
   display: none; }
@@ -349,6 +416,7 @@ body {
     .imgContainer {
       grid-row: 1 / 4;
       grid-column: 1 / 2;
+      z-index: 20;
       width: 100%;
       max-width: 100%;
       height: 100%;
