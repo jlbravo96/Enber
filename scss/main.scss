@@ -113,12 +113,34 @@ body {
   }
   &__menuLink {
     display: inline-block;
-    width: 50%;
     height: 100%;
 
     font-family: $h-font;
     font-size: calc(1rem + 1vw);
     line-height: 1;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0px;
+      height: 0.0625rem;
+      margin-top: 0.2rem;
+      background-color: $secondary;
+
+      @media screen and (min-width: $lg) {
+        transition: width 0.5s;
+        -webkit-transition: width 0.5s;
+        -moz-transition: width 0.5s;
+        -ms-transition: width 0.5s;
+        -o-transition: width 0.5s;
+      }
+    }
+
+    @media screen and (min-width: $lg) {
+      &:hover::after {
+        width: 100%;
+      }
+    }
 
     &--small {
       font-size: calc(0.5rem + 0.5vw);
@@ -163,7 +185,7 @@ body {
 
   margin: 1.7rem 0;
 
-  background-color: $gray;
+  background-color: $secondary;
 }
 
 .mainLogo {

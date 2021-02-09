@@ -173,11 +173,27 @@ body {
       margin-bottom: 0.75rem; }
   .pageNav__menuLink {
     display: inline-block;
-    width: 50%;
     height: 100%;
     font-family: "Bagnard", sans-serif;
     font-size: calc(1rem + 1vw);
     line-height: 1; }
+    .pageNav__menuLink::after {
+      content: "";
+      display: block;
+      width: 0px;
+      height: 0.0625rem;
+      margin-top: 0.2rem;
+      background-color: #fff; }
+      @media screen and (min-width: 992px) {
+        .pageNav__menuLink::after {
+          transition: width 0.5s;
+          -webkit-transition: width 0.5s;
+          -moz-transition: width 0.5s;
+          -ms-transition: width 0.5s;
+          -o-transition: width 0.5s; } }
+    @media screen and (min-width: 992px) {
+      .pageNav__menuLink:hover::after {
+        width: 100%; } }
     .pageNav__menuLink--small {
       font-size: calc(0.5rem + 0.5vw); }
   .pageNav__footer {
@@ -199,7 +215,7 @@ body {
   width: 2.5rem;
   height: 0.0625rem;
   margin: 1.7rem 0;
-  background-color: gray; }
+  background-color: #fff; }
 
 .mainLogo {
   display: inline-block;
