@@ -39,9 +39,13 @@ body {
   overflow-x: hidden;
 }
 
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
 .mainGrid {
   display: grid;
-  grid-template: auto / auto;
+  grid-template: 4rem auto / auto;
 
   @media screen and (min-width: $lg) {
     width: 100%;
@@ -79,22 +83,17 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-
   display: flex;
   flex-wrap: wrap;
-
-  z-index: 10;
-
-  overflow: hidden;
-
   width: 100%;
   height: 100vh;
-
-  padding: 3rem 6rem;
-
+  padding: 15% 15%;
+  z-index: 10;
+  overflow: auto;
   color: $secondary;
+  background-color: $primary;
 
-  @media screen and (min-width: $lg) {
+  @media screen and(min-width: $lg) {
     position: absolute;
 
     padding: 6rem 6rem 3rem;
@@ -102,7 +101,6 @@ body {
     width: 56vw;
   }
 
-  background-color: $primary;
   &__menuList {
     width: 100%;
   }
@@ -119,25 +117,31 @@ body {
     height: 100%;
 
     font-family: $h-font;
-    font-size: 2rem;
+    font-size: calc(1rem + 1vw);
     line-height: 1;
 
     &--small {
-      font-size: 1rem;
+      font-size: calc(0.5rem + 0.5vw);
     }
   }
 
   &__footer {
     color: $secondary;
+
     font-weight: 300;
+    letter-spacing: 0.1rem;
+    font-size: calc(0.5rem + 0.5vw);
 
     align-self: flex-end;
+
+    margin-top: 2rem;
   }
   transition: transform 0.5s;
   -webkit-transition: transform 0.5s;
   -moz-transition: transform 0.5s;
   -ms-transition: transform 0.5s;
   -o-transition: transform 0.5s;
+
   transform: translateX(-101%);
   -webkit-transform: translateX(-101%);
   -moz-transform: translateX(-101%);
@@ -154,10 +158,10 @@ body {
 }
 
 .separator {
-  width: 3.5rem;
+  width: 2.5rem;
   height: 0.0625rem;
 
-  margin: 2rem 0;
+  margin: 1.7rem 0;
 
   background-color: $gray;
 }
@@ -196,13 +200,15 @@ body {
 
   cursor: pointer;
 
-  &:hover .menuIcon__icon,
-  &:hover .menuIcon__cross {
-    transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
+  @media screen and (min-width: $lg) {
+    &:hover .menuIcon__icon,
+    &:hover .menuIcon__cross {
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+    }
   }
 
   &__icon,
@@ -215,12 +221,14 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 
-    transition: transform 0.2s;
+    @media screen and (min-width: $lg) {
+      transition: transform 0.2s;
 
-    -webkit-transition: transform 0.2s;
-    -moz-transition: transform 0.2s;
-    -ms-transition: transform 0.2s;
-    -o-transition: transform 0.2s;
+      -webkit-transition: transform 0.2s;
+      -moz-transition: transform 0.2s;
+      -ms-transition: transform 0.2s;
+      -o-transition: transform 0.2s;
+    }
   }
 
   &__cross {
@@ -281,11 +289,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s;
-    -webkit-transition: background-color 0.3s;
-    -moz-transition: background-color 0.3s;
-    -ms-transition: background-color 0.3s;
-    -o-transition: background-color 0.3s;
+
+    @media screen and (min-width: $lg) {
+      transition: background-color 0.3s;
+      -webkit-transition: background-color 0.3s;
+      -moz-transition: background-color 0.3s;
+      -ms-transition: background-color 0.3s;
+      -o-transition: background-color 0.3s;
+    }
 
     &:hover {
       background-color: black;
@@ -298,11 +309,13 @@ body {
   }
 
   &__logo {
-    transition: filter 0.3s;
-    -webkit-transition: filter 0.3s;
-    -moz-transition: filter 0.3s;
-    -ms-transition: filter 0.3s;
-    -o-transition: filter 0.3s;
+    @media screen and (min-width: $lg) {
+      transition: filter 0.3s;
+      -webkit-transition: filter 0.3s;
+      -moz-transition: filter 0.3s;
+      -ms-transition: filter 0.3s;
+      -o-transition: filter 0.3s;
+    }
   }
 }
 
@@ -378,12 +391,14 @@ body {
     font-weight: 600;
     color: #fff;
 
-    transition: color 0.5s;
+    @media screen and (min-width: $lg) {
+      transition: color 0.5s;
 
-    -webkit-transition: color 0.5s;
-    -moz-transition: color 0.5s;
-    -ms-transition: color 0.5s;
-    -o-transition: color 0.5s;
+      -webkit-transition: color 0.5s;
+      -moz-transition: color 0.5s;
+      -ms-transition: color 0.5s;
+      -o-transition: color 0.5s;
+    }
 
     &::after {
       content: "";
@@ -394,20 +409,25 @@ body {
       top: 0;
       background-color: rgb(255, 255, 255);
       z-index: -1;
-      transition: width 0.5s;
-      -webkit-transition: width 0.5s;
-      -moz-transition: width 0.5s;
-      -ms-transition: width 0.5s;
-      -o-transition: width 0.5s;
+
+      @media screen and (min-width: $lg) {
+        transition: width 0.5s;
+        -webkit-transition: width 0.5s;
+        -moz-transition: width 0.5s;
+        -ms-transition: width 0.5s;
+        -o-transition: width 0.5s;
+      }
     }
   }
 
-  &:hover .btn-black__text {
-    color: #000;
-  }
+  @media screen and (min-width: $lg) {
+    &:hover .btn-black__text {
+      color: #000;
+    }
 
-  &:hover .btn-black__text::after {
-    width: 102%;
+    &:hover .btn-black__text::after {
+      width: 102%;
+    }
   }
 }
 
