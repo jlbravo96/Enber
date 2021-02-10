@@ -6,22 +6,16 @@
   @media screen and (min-width: $sm) {
     width: 540px;
   }
-  @media screen and (min-width: $md) {
-    width: 720px;
-  }
+  // @media screen and (min-width: $md) {
+  //   width: 720px;
+  // }
   @media screen and (min-width: $lg) {
     width: 960px;
   }
-  @media screen and (min-width: $xl) and (orientation: landscape) {
-    width: 1140px;
-  }
-  @media screen and (min-width: $xxl) and (orientation: landscape) {
-    width: 1320px;
-  }
-}
-
-html {
-  @media screen and (min-width: $sm) {
-    font-size: 1.1rem;
-  }
+  // @media screen and (min-width: $xl) and (orientation: landscape) {
+  //   width: 1140px;
+  // }
+  // @media screen and (min-width: $xxl) and (orientation: landscape) {
+  //   width: 1320px;
+  // }
 }
