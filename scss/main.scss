@@ -34,8 +34,24 @@
   text-shadow: none;
   color: $secondary;
 }
+
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $secondary;
+  border: 0.0625rem solid $gray-lighter;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $primary;
+}
+
 body {
   font-family: $t-font;
+  font-weight: 500;
+  font-size: 1.1rem;
   overflow-x: hidden;
 }
 
@@ -53,7 +69,7 @@ body {
 
     overflow: hidden;
 
-    min-height: 600px;
+    min-height: 37.5px;
     max-height: 100vh;
 
     grid-template: 4rem auto 4rem / 45% 4rem auto;
@@ -123,7 +139,7 @@ body {
     &::after {
       content: "";
       display: block;
-      width: 0px;
+      width: 0;
       height: 0.0625rem;
       margin-top: 0.2rem;
       background-color: $secondary;
@@ -168,9 +184,9 @@ body {
 
 .navFooter {
   color: $gray;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.1rem;
-  font-size: calc(0.5rem + 0.6vw);
+  font-size: calc(0.4rem + 0.6vw);
   align-self: flex-end;
   margin-top: 2rem;
   opacity: 0;
@@ -486,18 +502,23 @@ body {
     grid-column: 3 / 4;
 
     overflow-y: auto;
+
+    display: block;
   }
 
   padding: 5.5%;
-
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .pageTitle {
   width: 100%;
   max-width: 35rem;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   margin: 0 auto;
 
@@ -506,9 +527,66 @@ body {
     font-weight: 500;
     line-height: 1.1;
   }
+}
 
-  &__subtitle {
-    font-size: calc(1rem + 0.5vw);
+.pageContent.menuPage {
+  .pageTitle {
+    display: block;
+
+    height: auto;
+
+    margin-bottom: 5rem;
+
+    &__title {
+      font-size: calc(1.5rem + 1vw);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+    &__subtitle {
+      font-size: calc(1rem + 0.4vw);
+      font-weight: 400;
+      color: $gray-dark;
+    }
+  }
+}
+
+.menuContainer {
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.entree,
+.mainDish,
+.desert {
+  margin-bottom: 4rem;
+
+  &__title {
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+}
+
+.desert {
+  margin-bottom: 0;
+}
+
+.dishesList {
+  color: $gray-dark;
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 0.0625rem solid $gray-lighter;
+
+    font-family: $t-font;
+  }
+  &__name {
+    margin-right: 1.5rem;
+  }
+  &__price {
+    white-space: nowrap;
   }
 }
 
