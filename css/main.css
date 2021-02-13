@@ -48,13 +48,6 @@ textarea {
   resize: vertical; }
 
 /* **** **** ---- RESET--OTHER ---- **** **** */
-.preload * {
-  transition: none !important;
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important; }
-
 h1,
 h2,
 h3,
@@ -153,7 +146,8 @@ body {
       padding: 15vh 10vw;
       width: 56vw; } }
   .pageNav__menuList {
-    width: 100%; }
+    width: 100%;
+    opacity: 0; }
   .pageNav__menuItem {
     margin-bottom: 1.25rem; }
     .pageNav__menuItem--small {
@@ -182,14 +176,21 @@ body {
       .pageNav__menuLink:hover::after {
         width: 100%; } }
     .pageNav__menuLink--small {
-      font-size: calc(0.5rem + 1vw); }
-  .pageNav__footer {
-    color: #fff;
-    font-weight: 300;
-    letter-spacing: 0.1rem;
-    font-size: calc(0.4rem + 0.6vw);
-    align-self: flex-end;
-    margin-top: 2rem; }
+      font-size: calc(0.4rem + 1vw);
+      color: gray; }
+      .pageNav__menuLink--small::after {
+        content: none; }
+
+.navFooter {
+  color: gray;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  font-size: calc(0.5rem + 0.6vw);
+  align-self: flex-end;
+  margin-top: 2rem;
+  opacity: 0; }
+  .navFooter__link {
+    color: #fff; }
 
 .menuExpand {
   transform: translateX(0);
@@ -197,6 +198,14 @@ body {
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0); }
+
+.opacity-1 {
+  opacity: 1;
+  transition: opacity 0.5s ease 0.5s;
+  -webkit-transition: opacity 0.5s ease 0.5s;
+  -moz-transition: opacity 0.5s ease 0.5s;
+  -ms-transition: opacity 0.5s ease 0.5s;
+  -o-transition: opacity 0.5s ease 0.5s; }
 
 .separator {
   width: 2.5rem;

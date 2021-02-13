@@ -103,6 +103,7 @@ body {
 
   &__menuList {
     width: 100%;
+    opacity: 0;
   }
   &__menuItem {
     margin-bottom: 1.25rem;
@@ -143,21 +144,15 @@ body {
     }
 
     &--small {
-      font-size: calc(0.5rem + 1vw);
+      font-size: calc(0.4rem + 1vw);
+      color: $gray;
+
+      &::after {
+        content: none;
+      }
     }
   }
 
-  &__footer {
-    color: $secondary;
-
-    font-weight: 300;
-    letter-spacing: 0.1rem;
-    font-size: calc(0.4rem + 0.6vw);
-
-    align-self: flex-end;
-
-    margin-top: 2rem;
-  }
   transition: transform 0.5s;
   -webkit-transition: transform 0.5s;
   -moz-transition: transform 0.5s;
@@ -171,6 +166,20 @@ body {
   -o-transform: translateX(-101%);
 }
 
+.navFooter {
+  color: $gray;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  font-size: calc(0.5rem + 0.6vw);
+  align-self: flex-end;
+  margin-top: 2rem;
+  opacity: 0;
+
+  &__link {
+    color: $secondary;
+  }
+}
+
 .menuExpand {
   transform: translateX(0);
 
@@ -178,6 +187,16 @@ body {
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
+}
+
+.opacity-1 {
+  opacity: 1;
+
+  transition: opacity 0.5s ease 0.5s;
+  -webkit-transition: opacity 0.5s ease 0.5s;
+  -moz-transition: opacity 0.5s ease 0.5s;
+  -ms-transition: opacity 0.5s ease 0.5s;
+  -o-transition: opacity 0.5s ease 0.5s;
 }
 
 .separator {

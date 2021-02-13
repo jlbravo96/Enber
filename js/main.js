@@ -1,8 +1,11 @@
+"use strict";
 /* |||| |||| ---- MENU ---- |||| |||| */
 
 const $menuIcon = document.getElementById("menuIcon"),
   $pageNav = document.getElementById("pageNav"),
-  $body = document.getElementById("body");
+  $body = document.getElementById("body"),
+  $menuList = document.querySelector(".pageNav__menuList"),
+  $navFooter = document.querySelector(".navFooter");
 
 $menuIcon.addEventListener("click", function () {
   $menuIcon.firstElementChild.classList.toggle("d-none");
@@ -13,6 +16,9 @@ $menuIcon.addEventListener("click", function () {
   $pageNav.classList.toggle("menuExpand");
 
   $body.classList.toggle("overflow-y-hidden");
+
+  $menuList.classList.toggle("opacity-1");
+  $navFooter.classList.toggle("opacity-1");
 });
 
 /* |||| |||| ---- SLIDE ---- |||| |||| */
